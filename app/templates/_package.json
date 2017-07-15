@@ -1,0 +1,76 @@
+{
+	"name": "<%= moduleName %>",
+	"version": "0.0.0",
+	"description": "<%= moduleDescription %>",
+	"license": "MIT",
+	"repository": "<%= githubUsername %>/<%= repoName %>",
+	"author": {
+		"name": "<%= name %>",
+		"email": "<%= email %>",
+		"url": "<%= humanizedWebsite %>"
+	},
+	"bin": "cli.js",
+	"engines": {
+		"node": ">=6"
+	},
+	"scripts": {
+		"test": "xo && <% if (nyc) { %>nyc <% } %>ava"
+	},
+	"files": [
+		"cli.js",
+		"ui.js"
+	],
+	"keywords": [
+		""
+	],
+	"dependencies": {
+		"ink": "^0.2.1",
+		"meow": "^3.7.0",
+		"prop-types": "^15.5.10"
+	},
+	"devDependencies": {
+		"ava": "^0.20.0",
+		"babel-plugin-transform-react-jsx": "^6.24.1",<% if (codecov) { %>
+		"codecov": "^2.2.0",<% } %>
+		"eslint-config-xo-react": "^0.13.0",
+		"eslint-plugin-react": "^7.1.0",
+		"import-jsx": "^1.2.0",<% if (nyc) { %>
+		"nyc": "^11.0.0",<% } %>
+		"xo": "^0.18.2"
+	},
+	"ava": {
+		"babel": {
+			"presets": [
+				"@ava/stage-4"
+			],
+			"plugins": [
+				[
+					"transform-react-jsx",
+					{
+						"pragma": "h",
+						"useBuiltIns": true
+					}
+				]
+			]
+		}
+	},
+	"xo": {
+		"extends": [
+			"xo-react"
+		],
+		"rules": {
+			"react/no-unused-prop-types": 1
+		},
+		"settings": {
+			"react": {
+				"pragma": "h"
+			}
+		}
+	}<% if (codecov) { %>,
+	"nyc": {
+		"reporter": [
+			"lcov",
+			"text"
+		]
+	}<% } %>
+}

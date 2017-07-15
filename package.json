@@ -1,0 +1,53 @@
+{
+  "name": "generator-ink-cli",
+  "version": "0.0.0",
+  "description": "Scaffold out a CLI based on Ink",
+  "license": "MIT",
+  "repository": "vadimdemedes/generator-ink-cli",
+  "author": {
+    "name": "Vadim Demedes",
+    "email": "vdemedes@gmail.com",
+    "url": "github.com/vadimdemedes"
+  },
+  "engines": {
+    "node": ">=4"
+  },
+  "scripts": {
+    "test": "xo && ava"
+  },
+  "files": [
+    "app"
+  ],
+  "keywords": [
+    "yeoman-generator",
+    "plugin",
+    "boilerplate",
+    "template",
+    "scaffold",
+    "ink",
+    "init"
+  ],
+  "dependencies": {
+    "humanize-url": "^1.0.1",
+    "is-scoped": "^1.0.0",
+    "normalize-url": "^1.2.0",
+    "superb": "^1.1.3",
+    "underscore.string": "^3.0.3",
+    "yeoman-generator": "^1.0.1"
+  },
+  "devDependencies": {
+    "ava": "*",
+    "pify": "^3.0.0",
+    "xo": "*",
+    "yeoman-assert": "^3.0.0",
+    "yeoman-test": "^1.0.0"
+  },
+  "ava": {
+    "failWithoutAssertions": false
+  },
+  "xo": {
+    "ignores": [
+      "app/templates/**"
+    ]
+  }
+}
