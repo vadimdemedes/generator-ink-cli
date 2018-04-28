@@ -1,14 +1,14 @@
 'use strict';
 
-const {h, Component, Text} = require('ink');
+const {h, Component, Color} = require('ink');
 const PropTypes = require('prop-types');
 
 class UI extends Component {
 	render({name}) {
 		return (
-			<Text green>
+			<Color green>
 				I love {name}
-			</Text>
+			</Color>
 		);
 	}
 }
